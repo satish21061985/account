@@ -8,7 +8,6 @@ services:
       - "8080:8080"  # Maps port 5000 on the host to port 5000 on the container
     depends_on:
       - postgres_db  # Ensure the database is started before the app
-      - redis  # Ensure Redis starts before the app
     environment:
       - APP_ENV=development
 
@@ -24,10 +23,6 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data  # Persists PostgreSQL data using a Docker volume
 
-  redis:
-    image: "redis:alpine"  # Use a lightweight Redis image
-    ports:
-      - "6379:6379"  # Exposes Redis on port 6379
 
 volumes:
   pgdata:
