@@ -6,6 +6,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.*;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 @AllArgsConstructor
@@ -15,7 +16,7 @@ import java.util.Objects;
 @Entity
 @Table(name="accounts")
 @ToString
-public class Account {
+public class Account implements Serializable {
     @Id
     private Long accountNumber;
     @Column(nullable = false, length = 100)
