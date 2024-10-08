@@ -1,7 +1,11 @@
 #!groovy
 
 pipeline {
-  agent none
+  agent {
+      docker {
+          image 'docker/compose:latest'
+      }
+  }
   stages {
     stage('Docker Build') {
       agent any
