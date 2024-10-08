@@ -4,6 +4,7 @@ pipeline {
   agent {
       docker {
           image 'docker/compose:latest'
+          args '-v /root/.m2:/root/.m2' // Mount Maven repository for dependency caching
       }
   }
   stages {
