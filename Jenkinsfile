@@ -6,7 +6,7 @@ pipeline {
     stage('Docker Build') {
       agent any
       steps {
-        sh 'docker compose build'
+        sh 'docker-compose build'
       }
     }
     stage('Docker Push') {
@@ -22,7 +22,7 @@ pipeline {
     stage('Docker Deploy') {
       agent any
       steps {
-        sh 'docker compose up'
+        sh 'docker-compose up'
       }
     }
   }
