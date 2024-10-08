@@ -3,7 +3,6 @@
 pipeline {
   agent none
   stages {
-
     stage('Docker Build') {
       agent any
       steps {
@@ -21,11 +20,10 @@ pipeline {
       }
     }
     stage('Docker Deploy') {
-          agent any
-          steps {
-              sh 'docker compose up'
-            }
-          }
-        }
+      agent any
+      steps {
+        sh 'docker compose up'
+      }
+    }
   }
 }
